@@ -47,13 +47,15 @@ React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연�
    git clone https://github.com/sonenhur/React-Todo-App.git
    cd react-todo-app
 
-2.	패키지를 설치합니다:
+2. 패키지를 설치합니다:
+    ```bash
     npm install
 
-3.	개발 서버를 실행합니다:
-    npm start
+3. 개발 서버를 실행합니다:
+   ```bash
+    npm run dev
 
-4.	브라우저에서 http://localhost:3000 으로 접속하면 앱이 실행됩니다.
+4. 브라우저에서 http://localhost:5173 으로 접속하면 앱이 실행됩니다.
 
 ---
 
