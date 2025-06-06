@@ -1,7 +1,7 @@
 # ✅ React Todo App
 
 간단하면서도 직관적인 할 일 목록(Todo List) 애플리케이션입니다.  
-React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연동까지 연습할 수 있도록 제작되었습니다.
+React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연동 등을 지원합니다.  
 
 ---
 
@@ -18,10 +18,10 @@ React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연�
 
 ## 🛠️ 사용 기술
 
-- **React 18+**
-- **Hooks (`useState`, `useEffect`, `useRef`)**
-- **CSS Modules**
-- **LocalStorage API**
+- React
+- Hooks (`useState`, `useEffect`, `useRef`)
+- CSS Modules
+- LocalStorage API
 
 ---
 
@@ -59,14 +59,14 @@ React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연�
 
 ---
 
-📌 로컬 스토리지 연동 설명
-	•	App.jsx에서 useEffect를 사용해 todo 상태가 바뀔 때마다 localStorage에 자동으로 저장합니다.
-	•	새로고침해도 데이터가 유지됩니다.
+📌 로컬 스토리지 연동 설명  
+	•	App.jsx에서 useEffect를 사용해 todo 상태가 바뀔 때마다 localStorage에 자동으로 저장합니다.  
+	•	새로고침해도 데이터가 유지됩니다.  
 
 ---
 
-✨ 향후 개선 아이디어
-	•	다크 모드
-	•	할 일 중요도(우선순위) 기능
-	•	날짜별 필터링
-	•	Firebase와 연동한 클라우드 저장
+✨ 향후 개선 아이디어  
+	•	다크 모드  
+	•	할 일 중요도(우선순위) 기능  
+	•	날짜별 필터링  
+	•	Firebase와 연동한 클라우드 저장  
