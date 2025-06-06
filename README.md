@@ -27,15 +27,15 @@ React를 활용하여 상태 관리, 이벤트 처리, 로컬 스토리지 연�
 
 ## 📁 프로젝트 구조
 
-📦src
-┣ 📂component
-┃ ┣ 📄Header.jsx
-┃ ┣ 📄TodoEditor.jsx
-┃ ┣ 📄TodoItem.jsx
-┃ ┗ 📄TodoList.jsx
-┣ 📄App.jsx
-┣ 📄App.css
-┗ 📄index.js
+📦src  
+┣ 📂component  
+┃ ┣ 📄Header.jsx  
+┃ ┣ 📄TodoEditor.jsx  
+┃ ┣ 📄TodoItem.jsx  
+┃ ┗ 📄TodoList.jsx  
+┣ 📄App.jsx  
+┣ 📄App.css  
+┗ 📄index.js  
 
 ---
 
