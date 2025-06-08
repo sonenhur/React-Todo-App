@@ -6,7 +6,8 @@ import "./TodoList.css";
 const TodoList = ({ todo, onUpdate, onDelete }) => {
   // 검색어를 저장하는 상태 변수 (초기값은 빈 문자열)
   const [search, setSearch] = useState("");
-
+  // 완료 항목을 숨길지 여부
+  const [hideDone, setHideDone] = useState(false);
   // 검색어 input이 변경될 때 실행되는 함수
   const onChangeSearch = (e) => {
     setSearch(e.target.value); // 입력값으로 상태 업데이트
@@ -14,17 +15,33 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
 
   // 검색어에 따라 필터링된 결과를 반환하는 함수
   const getSearchResult = () => {
-    if (search === "") {
-      // 검색어가 없으면 전체 목록 반환
-      return todo;
-    } else {
-      // 검색어가 있으면 일치하는 항목만 필터링
-      return todo.filter(
-        (item) => item.content.toLowerCase().includes(search.toLowerCase())
-        // content에 검색어가 포함되어 있는지 (대소문자 구분 X)
+    if (!Array.isArray(todo)) return [];
+
+    let filtered = todo;
+
+    if (search !== "") {
+      filtered = filtered.filter((item) =>
+        item.content?.toLowerCase().includes(search.toLowerCase())
       );
     }
+
+    if (hideDone) {
+      filtered = filtered.filter((item) => !item.isDone);
+    }
+
+    return filtered;
   };
+  //   if (search === "") {
+  //     // 검색어가 없으면 전체 목록 반환
+  //     return todo;
+  //   } else {
+  //     // 검색어가 있으면 일치하는 항목만 필터링
+  //     return todo.filter(
+  //       (item) => item.content.toLowerCase().includes(search.toLowerCase())
+  //       // content에 검색어가 포함되어 있는지 (대소문자 구분 X)
+  //     );
+  //   }
+  // };
 
   // 화면에 보여지는 실제 UI
   return (
@@ -38,7 +55,13 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
         className="searchbar" // CSS 클래스
         placeholder="검색어를 입력하세요" // 입력창 힌트
       />
-
+      {/* 완료 항목 숨기기 버튼 */}
+      <button
+        onClick={() => setHideDone(!hideDone)}
+        className="toggle_hide_done"
+      >
+        {hideDone ? "완료 항목 보기" : "완료 항목 숨기기"}
+      </button>
       {/* 할 일 목록을 감싸는 div */}
       <div className="list_wrapper">
         {/* getSearchResult()로 필터링한 결과를 map으로 돌면서 TodoItem을 생성 */}
