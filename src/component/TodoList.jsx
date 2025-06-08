@@ -20,8 +20,10 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
     let filtered = todo;
 
     if (search !== "") {
-      filtered = filtered.filter((item) =>
-        item.content?.toLowerCase().includes(search.toLowerCase())
+      filtered = filtered.filter(
+        (item) =>
+          item.content?.toLowerCase().includes(search.toLowerCase()) ||
+          item.priority?.includes(search)
       );
     }
 

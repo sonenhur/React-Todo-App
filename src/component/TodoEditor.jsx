@@ -42,12 +42,12 @@ const TodoEditor = ({ onCreate }) => {
   const onChangePriority = (e) => {
     setPriority(e.target.value);
   };
-  const handleSubmit = () => {
-    if (!content.trim()) return;
-    onCreate(content, priority);
-    setContent("");
-    setPriority("중간");
-  };
+  // const handleSubmit = () => {
+  //   if (!content.trim()) return;
+  //   onCreate(content, priority);
+  //   setContent("");
+  //   setPriority("중간");
+  // };
 
   // 실제 화면에 그려지는 부분 (JSX)
   return (

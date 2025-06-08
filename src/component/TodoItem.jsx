@@ -86,7 +86,14 @@ const TodoItem = ({
 
       {/* 생성 날짜 표시 영역 */}
       <div className="date_col">
-        {new Date(createdDate).toLocaleDateString()} {/* 보기 좋게 날짜 포맷 */}
+        {new Date(createdDate).toLocaleString("ko-KR", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        })}{" "}
+        {/* 보기 좋게 날짜 포맷 */}
       </div>
 
       {/* 버튼 영역 */}
