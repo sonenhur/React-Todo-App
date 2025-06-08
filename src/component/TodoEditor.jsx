@@ -23,7 +23,8 @@ const TodoEditor = ({ onCreate }) => {
     }
 
     // 부모 컴포넌트(App)의 onCreate 함수를 호출하여 새 할 일을 추가
-    onCreate(content);
+    onCreate(content, priority);
+    setPriority("중간"); //초기화
 
     // 입력창 초기화
     setContent("");
@@ -36,6 +37,18 @@ const TodoEditor = ({ onCreate }) => {
     }
   };
 
+  // 우선순위 설정 기능 추가
+  const [priority, setPriority] = useState("중간"); //기본값:중간
+  const onChangePriority = (e) => {
+    setPriority(e.target.value);
+  };
+  const handleSubmit = () => {
+    if (!content.trim()) return;
+    onCreate(content, priority);
+    setContent("");
+    setPriority("중간");
+  };
+
   // 실제 화면에 그려지는 부분 (JSX)
   return (
     <div className="TodoEditor">
@@ -46,11 +59,17 @@ const TodoEditor = ({ onCreate }) => {
         <input
           ref={inputRef} // 입력창을 참조할 수 있도록 설정
           value={content} // 현재 입력된 값과 연결
-          onChange={onChangeContent} // 입력 내용이 바뀔 때 실행
+          // onChange={onChangeContent} // 입력 내용이 바뀔 때 실행
+          onChange={(e) => setContent(e.target.value)}
           onKeyDown={onKeyDown} // 키보드 이벤트 (Enter) 처리
           placeholder="새로운 Todo..." // 입력 안내 문구
         />
-
+        {/* 우선순위 설정 */}
+        <select value={priority} onChange={onChangePriority}>
+          <option value="높음">높음</option>
+          <option value="중간">중간</option>
+          <option value="낮음">낮음</option>
+        </select>
         {/* 추가 버튼 */}
         <button onClick={onSubmit}>추가</button>
       </div>

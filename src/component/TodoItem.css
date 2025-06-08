@@ -53,3 +53,14 @@
 .btn_col button:hover {
   background-color: #1f93ff;
 }
+
+.priority_col.높음 {
+  color: red;
+  font-weight: bold;
+}
+.priority_col.중간 {
+  color: orange;
+}
+.priority_col.낮음 {
+  color: green;
+}

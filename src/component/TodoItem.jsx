@@ -2,7 +2,15 @@ import { useState } from "react";
 import "./TodoItem.css";
 
 // 부모 컴포넌트(TodoList)에서 props로 받은 정보들
-const TodoItem = ({ id, content, isDone, createdDate, onUpdate, onDelete }) => {
+const TodoItem = ({
+  id,
+  content,
+  isDone,
+  createdDate,
+  priority,
+  onUpdate,
+  onDelete,
+}) => {
   // 현재 이 항목이 수정 중인지 여부를 저장하는 상태
   const [isEdit, setIsEdit] = useState(false);
 
@@ -57,6 +65,7 @@ const TodoItem = ({ id, content, isDone, createdDate, onUpdate, onDelete }) => {
       </div>
 
       {/* 내용 영역 */}
+      <div className={`priority_col ${priority}`}>우선순위:{priority}</div>
       <div className="title_col">
         {isEdit ? (
           // 수정 모드일 때는 input 박스를 보여줌
